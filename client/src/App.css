@@ -1,0 +1,167 @@
+.app {
+  width: min(92vw, 560px);
+  margin: 3.5rem auto;
+  text-align: left;
+}
+
+.app h1 {
+  margin: 0 0 1rem;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.03em;
+  color: #f5f7ff;
+  text-shadow: 0 10px 26px rgba(2, 6, 23, 0.5);
+}
+
+.chat-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1rem;
+  background: linear-gradient(145deg, rgba(18, 30, 58, 0.9), rgba(12, 20, 38, 0.85));
+  box-shadow: 0 16px 42px rgba(1, 7, 20, 0.55);
+  backdrop-filter: blur(8px);
+  animation: card-enter 420ms ease;
+}
+
+.username,
+.input-area input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: #edf2ff;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  padding: 0.78rem 0.9rem;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.username::placeholder,
+.input-area input::placeholder {
+  color: rgba(224, 231, 255, 0.5);
+}
+
+.username {
+  margin-bottom: 0.85rem;
+}
+
+.username:focus,
+.input-area input:focus {
+  outline: none;
+  border-color: #7dd3fc;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.18);
+}
+
+.messages {
+  height: min(48vh, 360px);
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  margin-bottom: 0.85rem;
+  padding: 0.65rem;
+  background:
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.16), transparent 44%),
+    rgba(5, 10, 24, 0.48);
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 999px;
+}
+
+.message {
+  margin: 0.35rem 0;
+  padding: 0.58rem 0.72rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  animation: message-in 220ms ease;
+}
+
+.message b {
+  color: #7dd3fc;
+  margin-right: 0.2rem;
+}
+
+.input-area {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.55rem;
+}
+
+.input-area button {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0 1rem;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0b1220;
+  background: linear-gradient(130deg, #7dd3fc, #38bdf8);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 180ms ease;
+}
+
+.input-area button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+}
+
+.input-area button:active {
+  transform: translateY(0);
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes message-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .app {
+    width: 94vw;
+    margin-top: 1.25rem;
+  }
+
+  .chat-box {
+    border-radius: 16px;
+    padding: 0.8rem;
+  }
+
+  .messages {
+    height: min(45vh, 320px);
+  }
+
+  .input-area {
+    grid-template-columns: 1fr;
+  }
+
+  .input-area button {
+    min-height: 2.7rem;
+  }
+}
