@@ -1,4 +1,6 @@
 # FULL_STACK_EXP10 - WebSocket Chat (Spring Boot + React)
+<img width="664" height="648" alt="Screenshot 2026-04-23 at 14 26 57" src="https://github.com/user-attachments/assets/cc07eb7b-cee8-4f6a-b3d3-7c18034dba1e" />
+<img width="651" height="666" alt="Screenshot 2026-04-23 at 14 27 05" src="https://github.com/user-attachments/assets/4e98d9a7-41dc-4869-a729-4e5e8c3a590d" />
 
 A full-stack real-time chat application using:
 - Spring Boot (WebSocket + STOMP + SockJS) for backend messaging
